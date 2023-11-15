@@ -1,5 +1,6 @@
 import 'package:assessment/controllers/home_controller.dart';
 import 'package:assessment/utils/reusable_widgets.dart';
+import 'package:assessment/view/edit_store_profile/edit_store_profile_information.dart';
 import 'package:assessment/view/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,7 +26,11 @@ class BottomNav extends GetWidget<HomeController> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), color: Colors.white),
               child: RawMaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(
+                    () => const EditStoreProfileScreen(),
+                  );
+                },
                 child: const Icon(
                   Icons.location_on_outlined,
                   size: 40,

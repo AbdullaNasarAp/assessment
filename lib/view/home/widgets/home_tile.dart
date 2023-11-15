@@ -1,7 +1,7 @@
 import 'package:assessment/controllers/home_controller.dart';
 import 'package:assessment/utils/hex_color.dart';
 import 'package:assessment/utils/reusable_widgets.dart';
-import 'package:assessment/view/home/stamp_detail.dart/stamp_detail_page.dart';
+import 'package:assessment/view/stamp_detail.dart/stamp_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
