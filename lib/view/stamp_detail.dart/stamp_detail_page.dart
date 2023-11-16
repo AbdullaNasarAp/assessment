@@ -94,6 +94,7 @@ class StampDetailScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             width: double.infinity,
+            height: Get.height,
             color: Colors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

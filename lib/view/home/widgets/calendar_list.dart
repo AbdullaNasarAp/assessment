@@ -36,7 +36,7 @@ class MyList extends StatelessWidget {
             final dateToDisplay = twoWeeksAgo.add(Duration(days: index));
             final isDateSelected =
                 homeController.isSameDate(dateToDisplay, selectedDate).value;
-            // final dayName = DateFormat('E').format(dateToDisplay);
+
             homeController.japaneseDayName.value =
                 homeController.getJapaneseDayName(dateToDisplay);
 
@@ -63,13 +63,13 @@ class MyList extends StatelessWidget {
                     children: [
                       text(
                         giveText: homeController.japaneseDayName.value,
-                        fontsize: 19.0,
+                        fontsize: 17.0,
                         fontweight: FontWeight.w600,
                         textColor: isDateSelected ? Colors.white : Colors.black,
                       ),
                       text(
                         giveText: '${dateToDisplay.day}',
-                        fontsize: 19.0,
+                        fontsize: 17.0,
                         fontweight: FontWeight.bold,
                         textColor: isDateSelected ? Colors.white : Colors.black,
                       ),

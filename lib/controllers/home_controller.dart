@@ -12,6 +12,7 @@ class HomeController extends GetxController {
   ScrollController scrollController = ScrollController();
   Rx<DateTime> selectedDate = DateTime.now().obs;
   RxString japaneseDayName = ''.obs;
+  RxList<HomeTileModel> favoritesList = <HomeTileModel>[].obs;
 
   Future<void> loadMoreItems() async {
     if (currentPage.value * 20 >= 365) {
@@ -42,6 +43,16 @@ class HomeController extends GetxController {
     });
 
     super.onInit();
+  }
+
+  void toggleFavorite(HomeTileModel tile) {
+    bool isFavorited = favoritesList.contains(tile);
+
+    if (isFavorited) {
+      favoritesList.remove(tile);
+    } else {
+      favoritesList.add(tile);
+    }
   }
 
   RxBool isSameDate(DateTime date1, DateTime date2) {
@@ -76,6 +87,7 @@ class HomeController extends GetxController {
 
   List<HomeTileModel> tiles = [
     HomeTileModel(
+      id: "01",
       image: "assets/images/tile1.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -84,9 +96,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "02",
       image: "assets/images/tile2.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -95,9 +108,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "03",
       image: "assets/images/tile3.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -106,9 +120,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "04",
       image: "assets/images/tile4.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -117,9 +132,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "05",
       image: "assets/images/tile1.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -128,9 +144,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "06",
       image: "assets/images/tile2.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -139,9 +156,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "07",
       image: "assets/images/tile3.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -150,9 +168,10 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
     HomeTileModel(
+      id: "08",
       image: "assets/images/tile4.png",
       title: "介護有料老人ホームひまわり倶楽部の介護職／ヘルパー求人（パート／バイト）",
       rating: "本日まで",
@@ -161,7 +180,7 @@ class HomeController extends GetxController {
       description: "北海道札幌市東雲町3丁目916番地17号\n交通費 300円",
       price: "¥ 6,000",
       author: "住宅型有料老人ホームひまわり倶楽部",
-      isFavor: false,
+      isFavor: false.obs,
     ),
   ];
 }
